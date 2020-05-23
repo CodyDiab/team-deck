@@ -1,0 +1,27 @@
+{
+  "name": "team-deck",
+  "version": "1.0.0",
+  "description": "generates html page to display employee team",
+  "main": "Index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "jest": "^26.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodyDiab/team-deck.git"
+  },
+  "author": "Cody Diab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodyDiab/team-deck/issues"
+  },
+  "homepage": "https://github.com/CodyDiab/team-deck#readme"
+}
