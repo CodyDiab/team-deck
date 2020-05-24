@@ -1,33 +1,75 @@
 
-const generateManagers = require("./generateManager")
+const generateCard = require("./generateManager")
 
-const generateInterns = require("./generateIntern")
+// const generateInterns = require("./generateIntern")
 
-const generateEngineers = require("./generateEngineer")
+// const generateEngineers = require("./generateEngineer")
 
 
-
-// const generatePage = (managers,engineers,interns) => {
-//    for(i=0;i<managers.length;i++){
-//       const manager = managers[i]
-//     console.log( `
+const generateManagers = (managers)=> {
     
-//     <main class="uk-child-width-1-4@m uk-text-center" uk-grid>
-//             <div class="uk-card-default uk-card-body">
-//                 <h3 class="uk-card-title">${manager.getName()}</h3>
-//                 <h4>Manager<i class="fas fa-chess-queen"></i></h4>
-//                 <ul class="uk-list uk-list-divider">
-//                     <li>Id:${manager.getId()}</li>
-//                     <li>Email:<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-//                     <li>Office number:${manager.getOfficeNumber()}</li>
-//                 </ul>
+    if(managers.length>=1){
     
+    for(i = 0; i < managers.length; i++){
+      const  manager = managers[i]
+         
+            generateCard(manager) 
+          
+         
+           
+        
+    }
     
-//     `)
+  } else{
+      return``
+  }
+}
+const generateEngineers = (engineers)=> {
+    if(engineers.length>=1){
+    for(i = 0; i < engineers.length; i++){
+       const engineer = engineers[i]
+       console.log(engineer.github)
+        return`
+             <div class="uk-card-default uk-card-body">
+              <h3 class="uk-card-title">${engineer.name}</h3>
+              <h4>Engineer<i class="fas fa-chess-knight"></i></h4>
+              <ul class="uk-list uk-list-divider">
+                  <li>Id:${engineer.id}</li>
+                  <li>Email:<a href="mailto:${engineer.email}">${engineer.email}</a></li>
+                  <li>GitHub:<a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
+              </ul>
+
+          </div>
+        `
+    }
+  }else{
+      return``
+  } 
+}
+const generateInterns = (interns)=> {
+    if(interns.length>=1) {
+    for(i = 0; i < interns.length; i++){
+       const intern = interns[i]
+       console.log(intern.email)
+        return`
+        <div class="uk-card-default uk-card-body">
+        <h3 class="uk-card-title">${intern.name}</h3>
+        <h4>Intern<i class="fas fa-chess-pawn"></i></h4>
+        <ul class="uk-list uk-list-divider">
+            <li>Id:${intern.id}</li>
+            <li>Email:<a href="mailto:${intern.email}">${intern.email}</a></li>
+            <li>University:${intern.school}</li>
+        </ul>
+
+    </div>
+        `
+    }
+  }else{
+      return``
+  }
+}
 
 
-//    }
-// }
 const generatePage = (managers,engineers,interns) => {
     return`
     <!DOCTYPE html>
@@ -50,7 +92,7 @@ const generatePage = (managers,engineers,interns) => {
            ${generateInterns(interns)}
 
        </main>
-      </div>
+      
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit-icons.min.js"></script>

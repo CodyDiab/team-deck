@@ -1,6 +1,7 @@
 
 
 const engineerCard = (engineers)=> {
+    if(engineers){
     for(i = 0; i < engineers.length; i++){
        const engineer = engineers[i]
         return`
@@ -16,6 +17,7 @@ const engineerCard = (engineers)=> {
           </div>
         `
     }
+  } 
 }
 
 

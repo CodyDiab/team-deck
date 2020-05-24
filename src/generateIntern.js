@@ -2,6 +2,7 @@
 
 
 const internCard = (interns)=> {
+    if(interns) {
     for(i = 0; i < interns.length; i++){
        const intern = interns[i]
         return`
@@ -17,6 +18,7 @@ const internCard = (interns)=> {
     </div>
         `
     }
+  }
 }
 
 
