@@ -9,7 +9,10 @@ const engineers = [];
 const interns = [];
 
 // create templates for employee roles and HTML
-
+// const managerCard = require("./src/generateManager")
+// const engineerCard = require("./src/generateEngineer")
+// const internCard = require("./src/igenerateIntern")
+const generatePage = require("./src/generatePage")
 
 const initPrompt = () => {
     return inquirer.prompt({
@@ -27,7 +30,7 @@ const initPrompt = () => {
         else if(choice.initEmployee === "engineer") {
             userPrompt("engineer");
         }
-        else if(choice.initEMployee === "manager") {
+        else if(choice.initEmployee === "manager") {
             userPrompt("manager")
         }
     })
@@ -123,7 +126,13 @@ const addEmployee = () => {
              userPrompt("manager")
          }
          else {
-             //write file function/////
+           const pageHTML = generatePage(managers,interns,engineers)
+           fs.writeFile('dist/index.html',pageHTML,err => {
+               if (err) throw err;
+              
+               console.log('Your team deck is complete! check the dist directory for output.')
+            })
+
          }
      })
 
