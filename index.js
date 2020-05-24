@@ -8,10 +8,7 @@ const managers = [];
 const engineers = [];
 const interns = [];
 
-// create templates for employee roles and HTML
-// const managerCard = require("./src/generateManager")
-// const engineerCard = require("./src/generateEngineer")
-// const internCard = require("./src/igenerateIntern")
+
 const generatePage = require("./src/generatePage")
 
 const initPrompt = () => {
