@@ -1,9 +1,5 @@
 
-const generateCard = require("./generateManager")
 
-// const generateInterns = require("./generateIntern")
-
-// const generateEngineers = require("./generateEngineer")
 
 
 const generateManagers = (managers)=> {
@@ -12,17 +8,25 @@ const generateManagers = (managers)=> {
     
     for(i = 0; i < managers.length; i++){
       const  manager = managers[i]
-         
-            generateCard(manager) 
-          
-         
-           
-        
+     return `
+      <div class="uk-card-default uk-card-body">
+          <h3 class="uk-card-title">${manager.name}</h3>
+          <h4>Manager<i class="fas fa-chess-queen"></i></h4>
+          <ul class="uk-list uk-list-divider">
+              <li>Id:${manager.id}</li>
+              <li>Email:<a href="mailto:${manager.email}">${manager.email}</a></li>
+              <li>Office number:${manager.officeNumber}</li>
+          </ul>
+  
+     </div>
+  `    
     }
-    
+
+
   } else{
       return``
   }
+  
 }
 const generateEngineers = (engineers)=> {
     if(engineers.length>=1){
@@ -50,7 +54,7 @@ const generateInterns = (interns)=> {
     if(interns.length>=1) {
     for(i = 0; i < interns.length; i++){
        const intern = interns[i]
-       console.log(intern.email)
+       
         return`
         <div class="uk-card-default uk-card-body">
         <h3 class="uk-card-title">${intern.name}</h3>
