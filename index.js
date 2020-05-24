@@ -125,7 +125,7 @@ const addEmployee = () => {
          else if(choice.addAnother === "manager") {
              userPrompt("manager")
          }
-         else { console.log(managers,interns,engineers)
+         else { 
            const pageHTML = generatePage(managers,engineers,interns)
            fs.writeFile('dist/index.html',pageHTML,err => {
                if (err) throw err;

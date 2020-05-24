@@ -40,3 +40,7 @@
   [Email](mailto:emailcodydiab@gmail.com)
 
   [GitHub](https://github.com/CodyDiab)
+
+  ## Link to Video of App.
+
+  [Link](https://drive.google.com/file/d/1ps5y2uH1SG_RckTnGzkpxFC4zDPxB1N6/view)
